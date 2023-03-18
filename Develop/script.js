@@ -1,18 +1,36 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+var today = dayjs(); 
+var currentHour = dayjs().format('H');
+var hour = parseInt()
+
 $('init')
 
 $(function () {
-  var today = dayjs(); 
+  //display the current date on the header
+  
   $('#currentDay').text(today.format('MMM D, YYYY'));
 
-  var currentTime = dayjs().format('hh:mm:ss');
-
+// function for the save button on click
   var saveBtnListen = $('saveBtn');
   saveBtnListen.on('click', function() {
 
+
   }
+
+
+
+// display the proper background color according to past, present, or future
+function() 
+
+  if (hour < currentHour) {
+    $(this).addClass("past"); 
+  }else if (hour === currentHour) {
+      $(this).addClass("present");
+    }else { $(this).addClass("future")
+    }
+  
 
   
   // TODO: Add a listener for click events on the save button. This code should
