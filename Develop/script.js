@@ -12,24 +12,17 @@ $(function () {
 
 // function for the save button on click to store the text to the local storage
 
-  
-   $('.sveBtn').on('click', function() {
-    var hour = $('this').parent.attr('id');
-    var description = $('this').sibilings('.description').val();
+   $('.saveBtn').on('click', function() {
+    var hour = $(this).parent().attr('id');
+    var description = $(this).siblings('.description').val();
     localStorage.setItem(hour, description);
-
    });
-
-
- 
-
 
 
 // display the proper background color according to past, present, or future
 
-$(".time-block").each(function() {
+$(".time-block").each(function () {
 var currentHour = dayjs().hour();
-
 var hour = parseInt($(this).attr("id").replace("hour-", ""));
   if (hour < currentHour) {
     $(this).addClass("past"); 
@@ -39,13 +32,13 @@ var hour = parseInt($(this).attr("id").replace("hour-", ""));
     }
   });
   
-
+// This code goes through the time block class and retrieves the description data from the local storage
 
 $('.time-block').each(function() {
   var hour = $(this).attr('id');
-  var description = localStorage.getItem('hour');
+  var description = localStorage.getItem(hour);
 if (description) {
-  $(this).children('description').val(description);
+  $(this).children('.description').val(description);
 
 }
 });
