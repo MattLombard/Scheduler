@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
-
+/* added this so that the header is center aligned on the page and everthing else is left a lone */
 header {
   text-align: center;
 }
