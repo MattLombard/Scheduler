@@ -3,7 +3,7 @@
 // in the html.
 
 
-$('init')
+
 
 $(function () {
   //display the current date on the header
