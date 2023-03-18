@@ -28,7 +28,7 @@ $(function () {
 // display the proper background color according to past, present, or future
 
 $(".time-block").each(function() {
-var currentHour = dayjs().format('H');
+var currentHour = dayjs().hour();
 
 var hour = parseInt($(this).attr("id").replace("hour-", ""));
   if (hour < currentHour) {
@@ -39,6 +39,18 @@ var hour = parseInt($(this).attr("id").replace("hour-", ""));
     }
   });
   
+
+
+$('.time-block').each(function() {
+  var hour = $(this).attr('id');
+  var description = localStorage.getItem('hour');
+if (description) {
+  $(this).children('description').val(description);
+
+}
+});
+
+});
 
   
   // TODO: Add a listener for click events on the save button. This code should
@@ -68,6 +80,6 @@ var hour = parseInt($(this).attr("id").replace("hour-", ""));
 
 
 
-});
+
 
 
