@@ -10,10 +10,15 @@ $(function () {
   var today = dayjs(); 
   $('#currentDay').text(today.format('MMM D, YYYY'));
 
-// function for the save button on click
+// function for the save button on click to store the text to the local storage
 
-  // var saveBtnListen = $('saveBtn');
-  // saveBtnListen.on('click', function() {
+  
+   $('.sveBtn').on('click', function() {
+    var hour = $('this').parent.attr('id');
+    var description = $('this').sibilings('.description').val();
+    localStorage.setItem(hour, description);
+
+   });
 
 
  
@@ -24,6 +29,7 @@ $(function () {
 
 $(".time-block").each(function() {
 var currentHour = dayjs().format('H');
+
 var hour = parseInt($(this).attr("id").replace("hour-", ""));
   if (hour < currentHour) {
     $(this).addClass("past"); 
@@ -63,3 +69,5 @@ var hour = parseInt($(this).attr("id").replace("hour-", ""));
 
 
 });
+
+
