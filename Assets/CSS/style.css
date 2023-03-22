@@ -2,7 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
-/* added this so that the header is center aligned on the page and everthing else is left a lone */
+/* added this so that the header is center aligned on the page and everything else is left the same from the code provided to us in ht CSS */
 header {
   text-align: center;
 }
@@ -61,4 +61,3 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-
